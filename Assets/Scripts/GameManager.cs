@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;    
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject cam;
 
+    [SerializeField]
+    private TMP_Text notiText;
+
     public static GameManager instance;
 
     private void Awake()
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         RotateBall();
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -108,5 +113,16 @@ public class GameManager : MonoBehaviour
         cam.transform.parent = cueBall.transform;
         cam.transform.position = cueBall.transform.position + new Vector3(0f, 7f, -15f);
         cam.transform.eulerAngles = new Vector3(30f, 0f, 0f);
+    }
+
+    public void ShowScoreText(int n)
+    {
+        playerScore += n;
+        notiText.text = $"Ball Point:{n}\n Total Score: {playerScore}";
+    }
+
+    public void ShowString(string s)
+    {
+        notiText.text = s;
     }
 }
