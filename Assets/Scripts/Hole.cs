@@ -9,6 +9,14 @@ public class Hole : MonoBehaviour
         if (b != null)
         {
             if (b.Point == 0)
+            {
+                GameManager.instance.ShowString($"White ball drop\n You loes!");
+                Time.timeScale = 0;
+            }
+            else
+            {
+                GameManager.instance.ShowScoreText(b.Point);
+            }
          
            
             GameManager.instance.ShowScoreText(b.Point);
