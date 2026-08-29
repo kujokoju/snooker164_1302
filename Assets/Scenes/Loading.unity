@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loading
   slider: {fileID: 908098054}
-  waitSeconds: 1
+  waitSeconds: 2
 --- !u!1 &2008267575
 GameObject:
   m_ObjectHideFlags: 0

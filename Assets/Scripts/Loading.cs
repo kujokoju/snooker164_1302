@@ -9,7 +9,7 @@ public class Loading : MonoBehaviour
     private Slider slider;
 
     [SerializeField]
-    private float waitSeconds = 1f;
+    private float waitSeconds = 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +28,7 @@ public class Loading : MonoBehaviour
 
     private IEnumerator LoadNewScene()
     {
-        AsyncOperation oper = SceneManager.LoadSceneAsync("Scene01");
+        AsyncOperation oper = SceneManager.LoadSceneAsync("Scenes01");
 
         while (!oper.isDone)
         {
